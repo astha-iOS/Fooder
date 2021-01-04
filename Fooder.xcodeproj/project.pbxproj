@@ -12,6 +12,8 @@
 		076B2BC125A19C1500C5A386 /* CartTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B2BC025A19C1500C5A386 /* CartTblCell.swift */; };
 		076B2BC425A1DCCD00C5A386 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B2BC325A1DCCD00C5A386 /* HomeVC.swift */; };
 		076B2BC725A1DCE600C5A386 /* HomeTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B2BC625A1DCE600C5A386 /* HomeTblCell.swift */; };
+		076B2BCC25A2C03400C5A386 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 076B2BCB25A2C03400C5A386 /* readme.md */; };
+		076B2BCF25A2C12C00C5A386 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 076B2BCE25A2C12C00C5A386 /* .gitignore */; };
 		079A9FE9259F78D300F1A433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A9FE8259F78D300F1A433 /* AppDelegate.swift */; };
 		079A9FEB259F78D300F1A433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A9FEA259F78D300F1A433 /* SceneDelegate.swift */; };
 		079A9FF0259F78D300F1A433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A9FEE259F78D300F1A433 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		076B2BC025A19C1500C5A386 /* CartTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTblCell.swift; sourceTree = "<group>"; };
 		076B2BC325A1DCCD00C5A386 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		076B2BC625A1DCE600C5A386 /* HomeTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTblCell.swift; sourceTree = "<group>"; };
+		076B2BCB25A2C03400C5A386 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		076B2BCE25A2C12C00C5A386 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		079A9FE5259F78D300F1A433 /* Fooder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079A9FE8259F78D300F1A433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079A9FEA259F78D300F1A433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		079A9FDC259F78D300F1A433 = {
 			isa = PBXGroup;
 			children = (
+				076B2BCE25A2C12C00C5A386 /* .gitignore */,
+				076B2BCB25A2C03400C5A386 /* readme.md */,
 				079A9FE7259F78D300F1A433 /* Fooder */,
 				079A9FE6259F78D300F1A433 /* Products */,
 			);
@@ -142,8 +148,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076B2BCF25A2C12C00C5A386 /* .gitignore in Resources */,
 				079A9FF5259F78D300F1A433 /* LaunchScreen.storyboard in Resources */,
 				079A9FF2259F78D300F1A433 /* Assets.xcassets in Resources */,
+				076B2BCC25A2C03400C5A386 /* readme.md in Resources */,
 				079A9FF0259F78D300F1A433 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
