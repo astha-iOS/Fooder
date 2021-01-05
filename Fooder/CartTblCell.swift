@@ -12,6 +12,12 @@ class CartTblCell: UITableViewCell {
     
     @IBOutlet weak var btn_remove: UIButton!
     
+    @IBOutlet weak var img: UIImageView!
+    
+    @IBOutlet weak var lbl_name: UILabel!
+    @IBOutlet weak var lbl_price: UILabel!
+    
+    
     var removePressed : (() -> ()) = {}
     
     override func awakeFromNib() {

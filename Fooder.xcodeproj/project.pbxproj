@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		076B2BB925A0559400C5A386 /* HomeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B2BB825A0559400C5A386 /* HomeCVCell.swift */; };
 		076B2BBE25A19BF200C5A386 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B2BBD25A19BF200C5A386 /* CartVC.swift */; };
 		076B2BC125A19C1500C5A386 /* CartTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B2BC025A19C1500C5A386 /* CartTblCell.swift */; };
 		076B2BC425A1DCCD00C5A386 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076B2BC325A1DCCD00C5A386 /* HomeVC.swift */; };
@@ -19,12 +18,10 @@
 		079A9FF0259F78D300F1A433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A9FEE259F78D300F1A433 /* Main.storyboard */; };
 		079A9FF2259F78D300F1A433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079A9FF1259F78D300F1A433 /* Assets.xcassets */; };
 		079A9FF5259F78D300F1A433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A9FF3259F78D300F1A433 /* LaunchScreen.storyboard */; };
-		079AA003259F799200F1A433 /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AA002259F799200F1A433 /* HomeTVC.swift */; };
 		079AA00A259F7E0B00F1A433 /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AA009259F7E0B00F1A433 /* ViewPager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		076B2BB825A0559400C5A386 /* HomeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCVCell.swift; sourceTree = "<group>"; };
 		076B2BBD25A19BF200C5A386 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		076B2BC025A19C1500C5A386 /* CartTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTblCell.swift; sourceTree = "<group>"; };
 		076B2BC325A1DCCD00C5A386 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -38,7 +35,6 @@
 		079A9FF1259F78D300F1A433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		079A9FF4259F78D300F1A433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		079A9FF6259F78D300F1A433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		079AA002259F799200F1A433 /* HomeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTVC.swift; sourceTree = "<group>"; };
 		079AA009259F7E0B00F1A433 /* ViewPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,10 +73,8 @@
 				079AA009259F7E0B00F1A433 /* ViewPager.swift */,
 				079A9FE8259F78D300F1A433 /* AppDelegate.swift */,
 				079A9FEA259F78D300F1A433 /* SceneDelegate.swift */,
-				079AA002259F799200F1A433 /* HomeTVC.swift */,
-				076B2BC625A1DCE600C5A386 /* HomeTblCell.swift */,
 				076B2BC325A1DCCD00C5A386 /* HomeVC.swift */,
-				076B2BB825A0559400C5A386 /* HomeCVCell.swift */,
+				076B2BC625A1DCE600C5A386 /* HomeTblCell.swift */,
 				076B2BBD25A19BF200C5A386 /* CartVC.swift */,
 				076B2BC025A19C1500C5A386 /* CartTblCell.swift */,
 				079A9FEE259F78D300F1A433 /* Main.storyboard */,
@@ -165,12 +159,10 @@
 			files = (
 				079A9FE9259F78D300F1A433 /* AppDelegate.swift in Sources */,
 				076B2BC425A1DCCD00C5A386 /* HomeVC.swift in Sources */,
-				079AA003259F799200F1A433 /* HomeTVC.swift in Sources */,
 				076B2BBE25A19BF200C5A386 /* CartVC.swift in Sources */,
 				079A9FEB259F78D300F1A433 /* SceneDelegate.swift in Sources */,
 				079AA00A259F7E0B00F1A433 /* ViewPager.swift in Sources */,
 				076B2BC725A1DCE600C5A386 /* HomeTblCell.swift in Sources */,
-				076B2BB925A0559400C5A386 /* HomeCVCell.swift in Sources */,
 				076B2BC125A19C1500C5A386 /* CartTblCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,9 +22,33 @@ class HomeVC: UIViewController,ViewPagerDataSource {
     
     var arrSliderImages = ["b1", "b4", "b3"]
     var arrCat = ["a1","a2","a3","a4"]
+    var arrCartItems = NSMutableArray()
     
-    var cartItem = 0
-    var arrChooseIdx = NSMutableArray.self
+    var arrItems = [["img":"a1",
+                     "type":"Plain Pizza",
+                     "description":"lorem ipsum doller sit amet.....",
+                     "weight":"200 grams",
+                     "size":"25 cm","price":"30"],
+                    ["img":"a2",
+                    "type":"Veg Pizza",
+                    "description":"lorem ipsum doller sit amet.....",
+                    "weight":"300 grams",
+                    "size":"35 cm","price":"35"],
+                    ["img":"a3",
+                    "type":"Paneer Pizza",
+                    "description":"lorem ipsum doller sit amet.....",
+                    "weight":"250 grams",
+                    "size":"20 cm","price":"45"],
+                    ["img":"a4",
+                    "type":"Onion Pizza",
+                    "description":"lorem ipsum doller sit amet.....",
+                    "weight":"500 grams",
+                    "size":"50 cm","price":"60"],
+    
+    
+    ]
+
+    var arrChooseIdx = NSMutableArray()
     
 
     
@@ -47,7 +71,12 @@ class HomeVC: UIViewController,ViewPagerDataSource {
         
         btn_cart.layer.cornerRadius = btn_cart.layer.frame.size.height/2
         btn_cart.clipsToBounds = true
+        
+        lbl_cartItemNo.layer.cornerRadius = lbl_cartItemNo.layer.frame.size.height/2
+        lbl_cartItemNo.clipsToBounds = true
+       
     }
+    
     
     //MARK:- View Did Appear
     override func viewDidAppear(_ animated: Bool) {
@@ -55,16 +84,28 @@ class HomeVC: UIViewController,ViewPagerDataSource {
         view_pager.scrollToPage(index: 0)
         
         header_view.roundCorners(corners: [.topLeft, .topRight], radius: 40.0)
+        
+        self.lbl_cartItemNo.text = "0"
+        if arrCartItems.count>0{
+            arrCartItems.removeAllObjects()
+            arrChooseIdx.removeAllObjects()
+        }
     }
     
     //MARK: - Cart Click Action
     @IBAction func cart_Click(_ sender: Any) {
         // Safe Push VC
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC") as? CartVC {
-            if let navigator = navigationController {
-                navigator.pushViewController(viewController, animated: true)
+        if arrCartItems.count>0 {
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC") as? CartVC {
+                if let navigator = navigationController {
+                    vc.arrCart = arrCartItems
+                    navigator.pushViewController(vc, animated: true)
+                    
+                }
+                
             }
         }
+        
     }
     
     
@@ -80,14 +121,11 @@ class HomeVC: UIViewController,ViewPagerDataSource {
         if(newView == nil){
             newView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height:  self.view.frame.height))
             
-         //   img = UIImageView(frame: newView!.bounds)
             img = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height:  400))
             
             img?.image = UIImage(named: arrSliderImages[index])
             newView?.addSubview(img!)
             
-        }else{
-
         }
                
         return newView!
@@ -109,7 +147,7 @@ extension UIView {
 
 extension HomeVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return arrItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -124,10 +162,30 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource{
         cell.btn_price.layer.cornerRadius = cell.btn_price.frame.size.height/2
         cell.btn_price.clipsToBounds = true
         
-        cell.img_item?.image = UIImage(named: arrCat[indexPath.row])
+        let dict = arrItems[indexPath.row]
+        cell.lbl_name.text = dict["type"]
+        cell.lbl_description.text = dict["description"]
+        let strWeight = dict["weight"] ?? ""
+        let strSize = dict["size"] ?? ""
+        cell.lbl_size.text = strWeight + " " + strSize
+        let strPrice = dict["price"] ?? ""
+        cell.btn_price.setTitle((strPrice + " " + "USD"), for: .normal)
+        
+        cell.img_item?.image = UIImage(named: dict["img"]! )
         
         cell.priceClick = {
-            arrChooseIdx.adding(indexPath.row)
+            
+            cell.btn_price.setTitle("Add", for: .highlighted)
+            
+            if self.arrChooseIdx.contains(indexPath.row){
+                self.arrChooseIdx.remove(indexPath.row)
+                self.arrCartItems.remove(self.arrItems[indexPath.row])
+            }else{
+                self.arrChooseIdx.add(indexPath.row)
+                self.arrCartItems.add(self.arrItems[indexPath.row])
+            }
+            
+            self.lbl_cartItemNo.text = String(self.arrChooseIdx.count)
         }
         
         return cell
@@ -143,4 +201,30 @@ extension UIButton{
 extension UIView{
     
     
+}
+extension String {
+
+    var length: Int {
+        return count
+    }
+
+    subscript (i: Int) -> String {
+        return self[i ..< i + 1]
+    }
+
+    func substring(fromIndex: Int) -> String {
+        return self[min(fromIndex, length) ..< length]
+    }
+
+    func substring(toIndex: Int) -> String {
+        return self[0 ..< max(0, toIndex)]
+    }
+
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
+                                            upper: min(length, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[start ..< end])
+    }
 }
